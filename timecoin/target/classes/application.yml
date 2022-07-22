@@ -18,9 +18,9 @@ spring:
       max-request-size: 50MB
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: 1
-    username: 1
-    password: 1
+    url: jdbc:oracle:thin:@db202201212242_high?TNS_ADMIN=C:/key/Wallet_DB202201212242
+    username: timecoin
+    password: 00780078Jsjs^^
   jpa:
     open-in-view: true
     hibernate:
