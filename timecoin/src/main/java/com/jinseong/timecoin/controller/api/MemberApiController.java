@@ -19,6 +19,7 @@ public class MemberApiController {
 	
 	
 	/*
+	
 	@PostMapping("/api/member/login")
 	public ResponseDto<Integer> login(@RequestBody Member member, HttpSession session) {
 		System.out.println("login 호출됨");
