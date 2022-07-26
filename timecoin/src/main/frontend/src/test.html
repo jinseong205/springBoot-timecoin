@@ -1,0 +1,22 @@
+<head>
+  <title>document</title>
+</head>
+
+<body>
+  <script>
+    //concat, filter, map, slice, spread(전개) operator
+    const a = [1, 2, 3];
+    const b = [...a]; //깊은 복사
+    console.log('1. ------------ spread operator');
+    b.push(4);
+    console.log(`a의 값은 ${a}`);
+    console.log(`a의 값은 ${b}`);
+
+    const c = [1, 2, 3];
+    const d = c; //깊은 복사
+    console.log('1. ------------ spread operator');
+    d.push(4);
+    console.log(`a의 값은 ${c}`);
+    console.log(`a의 값은 ${d}`);
+  </script>
+</body>
