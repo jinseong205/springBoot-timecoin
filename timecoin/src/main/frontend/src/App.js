@@ -1,20 +1,28 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  let number = 1; //상태 값
+  /*실행 시점 
+    > 1. App() 함수 최초 실행될때 == mount 될때
+    > 2. 상태 변수가 변경 될때
+  */
+  const [data, setData] = useState(0);
 
-  const add = () => {
-    number++;
-    console.log('add', number);
-  };
-  //랜더링 시점 = 상태값 변경
+  useEffect(() => {
+    console.log('useEffect 실행됨');
+    //return () => {};
+  });
+
   return (
     <div>
-      <div>
-        <h1>숫자 : {number}</h1>
-        <button onClick={add}>Add</button>
-      </div>
+      <h1> 데이터 {data}</h1>
+      <button
+        onClick={() => {
+          setData(data + 1);
+        }}
+      >
+        add
+      </button>
     </div>
   );
 }
