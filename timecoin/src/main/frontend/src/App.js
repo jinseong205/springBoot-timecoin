@@ -1,10 +1,10 @@
 import './App.css';
-import { Title } from './MyCss';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <div>
-      <Title>Hello</Title>
+      <LoginPage />
     </div>
   );
 }
