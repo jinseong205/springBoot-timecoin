@@ -1,14 +1,10 @@
 import './App.css';
-
-const a = {
-  backgroundColor: 'red',
-};
+import { Title } from './MyCss';
 
 function App() {
   return (
     <div>
-      <div style={a}>안녕</div>
-      <div className="box-style">헬로</div>
+      <Title>Hello</Title>
     </div>
   );
 }
