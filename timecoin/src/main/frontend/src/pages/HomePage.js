@@ -5,7 +5,7 @@ import Home from '../components/home/Home';
 
 const HomePage = () => {
   const [boards, setBoards] = useState([]);
-
+  const [user, setUser] = useState([]);
   //빈 배열 한번만 실행
   useEffect(() => {
     //다운로드 가정   //http 요청 (fetch, axios (다운))
@@ -16,12 +16,13 @@ const HomePage = () => {
     ];
 
     setBoards([...data]);
+    setUser({id:1, username:'jinsung'});
   }, []);
 
   return (
     <div>
       <Header />
-      <Home boards={boards} setBoards={setBoards} /> {/* props */}
+      <Home boards={boards} setBoards={setBoards} user={user}/> {/* props */}
       <Footer />
     </div>
   );
