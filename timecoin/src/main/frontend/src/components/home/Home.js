@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Home = () => {
-    return (
-        <div>
-            <h1>홈페이지 입니다.</h1>
-        </div>
-    );
+//Function 방식
+const Home = (props) => {
+  const { boards } = props;
+  console.log(boards);
+
+  return <div>홈페이지 입니다.</div>;
 };
 
 export default Home;
