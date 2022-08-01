@@ -11,15 +11,20 @@ const StyledHeaderDiv = styled.div`
   background-color : ${(v)=> v.backgroundColor}
 `;
 
+const StyledHeadLink = styled(Link)`
+  color: red;
+
+`;
+
 const Header = () => {
   return (
     <StyledHeaderDiv backgroundColor = "blue" >
       <ul>
         <li>
-          <Link to="/">홈</Link>
+          <StyledHeadLink to="/">홈</StyledHeadLink>
         </li>
         <li>
-          <Link to="/loign/10">로그인</Link>
+          <StyledHeadLink to="/login/10">로그인</StyledHeadLink>
         </li>
       </ul>
     </StyledHeaderDiv>

@@ -4,7 +4,6 @@ import Header from './components/Header';
 import { Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import { Routes } from 'react-router-dom';
 
 function App() {
   return (
