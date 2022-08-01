@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 //하나의 컴포넌트 생성 (재사용)
@@ -14,8 +15,12 @@ const Header = () => {
   return (
     <StyledHeaderDiv backgroundColor = "blue" >
       <ul>
-        <li>메뉴1</li>
-        <li>메뉴2</li>
+        <li>
+          <Link to="/">홈</Link>
+        </li>
+        <li>
+          <Link to="/login">로그인</Link>
+        </li>
       </ul>
     </StyledHeaderDiv>
   );

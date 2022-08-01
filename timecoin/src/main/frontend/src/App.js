@@ -8,10 +8,8 @@ import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <div>
-      <Header />
       <Route path="/" exact={true} component={HomePage} />
       <Route path="/login" exact={true} component={LoginPage} />
-      <Footer />
     </div>
   );
 }
