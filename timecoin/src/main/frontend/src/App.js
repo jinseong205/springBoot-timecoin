@@ -4,12 +4,13 @@ import Header from './components/Header';
 import { Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import { Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div>
       <Route path="/" exact={true} component={HomePage} />
-      <Route path="/login" exact={true} component={LoginPage} />
+      <Route path="/login/:id" exact={true} component={LoginPage} />
     </div>
   );
 }

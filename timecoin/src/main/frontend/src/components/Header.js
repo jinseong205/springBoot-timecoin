@@ -19,7 +19,7 @@ const Header = () => {
           <Link to="/">홈</Link>
         </li>
         <li>
-          <Link to="/login">로그인</Link>
+          <Link to="/loign/10">로그인</Link>
         </li>
       </ul>
     </StyledHeaderDiv>
