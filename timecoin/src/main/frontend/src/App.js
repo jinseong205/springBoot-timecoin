@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -6,8 +7,10 @@ import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <div>
-      <Route path="/" exact={true} component={HomePage} />
-      <Route path="/login/:id" exact={false} component={LoginPage} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login/:id" element={<LoginPage />} />
+      </Routes>
     </div>
   );
 }
