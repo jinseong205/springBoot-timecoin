@@ -13,7 +13,13 @@ const StyleBoardBoxDiv = styled.div`
 `;
 
 const ListPage = () => {
-  const [board, setBoard] = useState([
+  const [board, setBoard] = useState({
+    id: '',
+    title: '',
+    content: '',
+  });
+
+  const [boards, setBoards] = useState([
     { id: 1, title: '내용1' },
     { id: 2, title: '내용2' },
     { id: 3, title: '내용3' },
@@ -21,9 +27,25 @@ const ListPage = () => {
     { id: 5, title: '내용5' },
   ]);
 
+  const handleWrite = () => {
+    //ListPage의 setPost에 무엇을 담아야함
+    let board = { id: 6, title: '인풋값' };
+
+    //setBoards();
+  };
+
   return (
     <>
       <Navigation />
+
+      <h1>글쓰기 페이지</h1>
+      <form>
+        <input type="text" placeholder="제목을 입력하세요..." />
+        <button type="button" onClick={handleWrite}>
+          글쓰기
+        </button>
+      </form>
+
       <h1>글목록 페이지</h1>
       {board.map((board) => (
         <StyleBoardBoxDiv key={board.id}>

@@ -4,6 +4,8 @@ import ListPage from './pages/Board/ListPage';
 import WritePage from './pages/Board/WritePage';
 
 function App() {
+  //상태
+
   return (
     <>
       <Routes>
