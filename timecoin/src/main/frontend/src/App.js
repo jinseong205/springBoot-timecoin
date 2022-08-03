@@ -1,17 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
+import { Routes, Route } from 'react-router-dom';
+import ListPage from './pages/Board/ListPage';
+import WritePage from './pages/Board/WritePage';
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login/:id" element={<LoginPage />} />
+        <Route path="/" element={<ListPage />} />
+        <Route path="/write" element={<WritePage />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

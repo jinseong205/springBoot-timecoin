@@ -16,13 +16,13 @@ const HomePage = () => {
     ];
 
     setBoards([...data]);
-    setUser({id:1, username:'jinsung'});
+    setUser({ id: 1, username: 'jinsung' });
   }, []);
 
   return (
     <div>
       <Header />
-      <Home boards={boards} setBoards={setBoards} user={user}/> {/* props */}
+      <Home boards={boards} setBoards={setBoards} user={user} /> {/* props */}
       <Footer />
     </div>
   );
