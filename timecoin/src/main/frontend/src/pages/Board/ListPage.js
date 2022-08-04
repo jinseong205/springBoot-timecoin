@@ -20,18 +20,18 @@ const ListPage = () => {
   });
 
   const [boards, setBoards] = useState([
-    { id: 1, title: '내용1' },
-    { id: 2, title: '내용2' },
-    { id: 3, title: '내용3' },
-    { id: 4, title: '내용4' },
-    { id: 5, title: '내용5' },
+    { id: 1, title: '제목1', content: '1' },
+    { id: 2, title: '제목2', content: '2' },
   ]);
 
   const handleWrite = () => {
-    //ListPage의 setPost에 무엇을 담아야함
-    let board = { id: 6, title: '인풋값' };
+    let newid;
+    newid = boards[boards.length - 1].id + 1;
+    setBoards([...boards, { ...board, id: newid }]);
+  };
 
-    //setBoards();
+  const handleForm = (e) => {
+    setBoard({ ...board, [e.target.name]: e.target.value });
   };
 
   return (
@@ -40,17 +40,30 @@ const ListPage = () => {
 
       <h1>글쓰기 페이지</h1>
       <form>
-        <input type="text" placeholder="제목을 입력하세요..." />
+        <input
+          type="text"
+          placeholder="제목을 입력하세요..."
+          value={board.title}
+          onChange={handleForm}
+          name="title"
+        />
+        <input
+          type="text"
+          placeholder="내용을 입력하세요..."
+          value={board.content}
+          onChange={handleForm}
+          name="content"
+        />
         <button type="button" onClick={handleWrite}>
           글쓰기
         </button>
       </form>
 
       <h1>글목록 페이지</h1>
-      {board.map((board) => (
+      {boards.map((board) => (
         <StyleBoardBoxDiv key={board.id}>
           <div>
-            번호 : {board.id} 제목 : {board.title}
+            번호 : {board.id} / 제목 : {board.title} / 내용 : {board.content}
           </div>
           <button>삭제</button>
         </StyleBoardBoxDiv>
