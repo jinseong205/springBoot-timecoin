@@ -68,6 +68,7 @@ const ListPage = () => {
           <button>삭제</button>
         </StyleBoardBoxDiv>
       ))}
+      
     </>
   );
 };
