@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Bottom = () => {
+const Bottom = (props) => {
+  const { addNumber } = props;
+
   return (
     <div className="sub_container">
       <h1> Bottom</h1>
-      <button>증가</button>
+      <button onClick={addNumber}>증가</button>
     </div>
   );
 };

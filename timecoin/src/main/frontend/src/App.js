@@ -6,14 +6,21 @@ import Bottom from './components/Bottom';
 import ListPage from './pages/Board/ListPage';
 import WritePage from './pages/Board/WritePage';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [number, setNumber] = useState(1);
+
+  const addNumber = () => {
+    setNumber(number + 1);
+  };
+
   return (
     <>
       <div className="container">
         <h1> 최상단 화면 </h1>
-        <Top />
-        <Bottom />
+        <Top number={number} />
+        <Bottom addNumber={addNumber} />
       </div>
     </>
 
