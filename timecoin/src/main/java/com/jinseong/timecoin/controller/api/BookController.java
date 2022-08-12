@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 	@GetMapping("/")
 	public ResponseEntity<?> findAll(){
-		return new ResponseEntity<String>("ok",HttpStatus.OK);
+		return new ResponseEntity<String>("ok",HttpStatus.OK);		//200 //httpStatusCode
+
 	}
 }
