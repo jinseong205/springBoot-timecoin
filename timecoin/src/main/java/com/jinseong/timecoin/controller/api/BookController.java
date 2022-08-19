@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jinseong.timecoin.model.Book;
+import com.jinseong.timecoin.service.BookService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class BookController {
 	
-	private final BookController bookServcie;
+	private final BookService bookServcie;
 	
 	
 	@GetMapping("/book")
