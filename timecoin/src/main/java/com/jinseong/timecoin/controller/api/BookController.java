@@ -14,7 +14,9 @@ import com.jinseong.timecoin.model.Book;
 import com.jinseong.timecoin.service.BookService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 public class BookController {
@@ -40,12 +42,13 @@ public class BookController {
 	}
 
 	@PutMapping("/book/{id}")
-	public ResponseEntity<?> update(@RequestBody Long id, Book book){
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Book book){
+		log.info("id =========== " + id);
 		return new ResponseEntity<>(bookServcie.update(id, book),HttpStatus.OK);		//200 //httpStatusCode
 	}
 
 	@DeleteMapping("/book/{id}")
-	public ResponseEntity<?> delete(@RequestBody Long id){
+	public ResponseEntity<?> delete(@PathVariable Long id){
 		return new ResponseEntity<>(bookServcie.delete(id),HttpStatus.OK);		//200 //httpStatusCode
 	}
 
