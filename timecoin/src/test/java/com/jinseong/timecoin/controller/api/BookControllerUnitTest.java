@@ -1,14 +1,21 @@
 package com.jinseong.timecoin.controller.api;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jinseong.timecoin.model.Book;
 import com.jinseong.timecoin.service.BookService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,15 +24,37 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @WebMvcTest
 public class BookControllerUnitTest {
-	
-	@Autowired 
+
+	@Autowired
 	private MockMvc mockMvc;
-	
-	@Mock
-	private BookService service;
-	
+
+	@MockBean // IoC 환경에 bean 등록됨
+	private BookService bookService;
+
+	// BDDMockito 패턴 given, when, then
 	@Test
-	public void saveTest(){
-		log.info("saveTest() 시작==================");
+	public void saveTest() throws Exception {
+
+		log.info("saveTest() 시작====================================");
+
+		// given (테스트 하기를 위한 준비)
+		Book book = new Book(null, "스프링 따라하기", "진성");
+		String content = new ObjectMapper().writeValueAsString(book);
+		when(bookService.save(book)).thenReturn(new Book(1L, "스프링 따라하기", "진성"));
+
+		// when (테스트 실행)
+		ResultActions resultAction = mockMvc
+				.perform(post("/book")
+				.contentType(MediaType.APPLICATION_JSON_VALUE)
+				.content(content).accept(MediaType.APPLICATION_JSON_VALUE)
+				);
+
+		//then (검증)
+		resultAction
+			.andExpect(status().isCreated())
+			.andExpect(jsonPath("$.title").value("스프링 따라하기"))		//jsonPath 확인
+			.andDo(MockMvcResultHandlers.print());	
+		
+		
 	}
 }

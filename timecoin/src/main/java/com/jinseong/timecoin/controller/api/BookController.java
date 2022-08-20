@@ -24,7 +24,7 @@ public class BookController {
 	
 	@GetMapping("/book")
 	public ResponseEntity<?> findAll(){
-		return new ResponseEntity<>(bookServcie.findAll(),HttpStatus.CREATED);		//200 //httpStatusCode
+		return new ResponseEntity<>(bookServcie.findAll(),HttpStatus.OK);		//200 //httpStatusCode
 	}
 	
 	
@@ -36,7 +36,7 @@ public class BookController {
 
 	@PostMapping("/book")
 	public ResponseEntity<?> save(@RequestBody Book book){
-		return new ResponseEntity<>(bookServcie.save(book),HttpStatus.OK);		//200 //httpStatusCode
+		return new ResponseEntity<>(bookServcie.save(book),HttpStatus.CREATED);		//200 //httpStatusCode
 	}
 
 	@PutMapping("/book/{id}")
