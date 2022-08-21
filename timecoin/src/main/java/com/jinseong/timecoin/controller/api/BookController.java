@@ -2,6 +2,7 @@ package com.jinseong.timecoin.controller.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class BookController {
 	private final BookService bookServcie;
 	
 	
+	@CrossOrigin
 	@GetMapping("/book")
 	public ResponseEntity<?> findAll(){
 		return new ResponseEntity<>(bookServcie.findAll(),HttpStatus.OK);		//200 //httpStatusCode
