@@ -19,7 +19,7 @@ function Header() {
             navbarScroll
           >
 
-            <Link className="nav-link" to="/book/List">Home</Link>
+            <Link className="nav-link" to="/book/List">HOME</Link>
             <Link className="nav-link" to="/book/saveForm">WRITE</Link>
             <Link className="nav-link" to="/member/joinForm">SIGN IN</Link>
             <Link className="nav-link" to="/member/loginForm">LOGIN</Link>

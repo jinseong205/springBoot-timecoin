@@ -22,6 +22,7 @@ const BookList = () => {
         <>
             <Header/>
             <Container>
+                <br/>
                 <h1>책 리스트 보기</h1>
                 {books.map((book) => (<BookItem key = {book.id} book={book}/>)) }
             </Container>
