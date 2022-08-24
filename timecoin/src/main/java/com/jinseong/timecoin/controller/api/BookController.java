@@ -37,10 +37,10 @@ public class BookController {
 		return new ResponseEntity<>(bookServcie.findById(id),HttpStatus.OK);		//200 //httpStatusCode
 	}
 	
-
+	@CrossOrigin
 	@PostMapping("/book")
 	public ResponseEntity<?> save(@RequestBody Book book){
-		return new ResponseEntity<>(bookServcie.save(book),HttpStatus.CREATED);		//200 //httpStatusCode
+		return new ResponseEntity<>(bookServcie.save(book),HttpStatus.CREATED);		//201 //httpStatusCode
 	}
 
 	@PutMapping("/book/{id}")

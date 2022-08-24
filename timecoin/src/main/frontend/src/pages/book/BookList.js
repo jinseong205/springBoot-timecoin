@@ -14,6 +14,7 @@ const BookList = () => {
         fetch("http://localhost/book",{})
         .then(res => res.json())
         .then(res=>{
+            console.log(res)
             setBooks(res);
         });
     },[])
