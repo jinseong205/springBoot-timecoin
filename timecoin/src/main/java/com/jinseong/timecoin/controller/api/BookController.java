@@ -24,14 +24,14 @@ public class BookController {
 	
 	private final BookService bookServcie;
 	
-	
+	//security - CORS정책을 가지고 있음 (Security가 CORS를 해제)
 	@CrossOrigin
 	@GetMapping("/book")
 	public ResponseEntity<?> findAll(){
 		return new ResponseEntity<>(bookServcie.findAll(),HttpStatus.OK);		//200 //httpStatusCode
 	}
 	
-	
+	@CrossOrigin
 	@GetMapping("/book/{id}")
 	public ResponseEntity<?> findById(@PathVariable Long id){
 		return new ResponseEntity<>(bookServcie.findById(id),HttpStatus.OK);		//200 //httpStatusCode
@@ -43,12 +43,14 @@ public class BookController {
 		return new ResponseEntity<>(bookServcie.save(book),HttpStatus.CREATED);		//201 //httpStatusCode
 	}
 
+	@CrossOrigin
 	@PutMapping("/book/{id}")
 	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody Book book){
 		log.info("id =========== " + id);
 		return new ResponseEntity<>(bookServcie.update(id, book),HttpStatus.OK);		//200 //httpStatusCode
 	}
 
+	@CrossOrigin
 	@DeleteMapping("/book/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id){
 		return new ResponseEntity<>(bookServcie.delete(id),HttpStatus.OK);		//200 //httpStatusCode

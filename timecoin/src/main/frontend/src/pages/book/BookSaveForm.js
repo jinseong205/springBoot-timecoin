@@ -30,7 +30,7 @@ const BookSaveForm = () => {
                 "Content-Type":"application/json; charset=utf-8"
             },
             body:JSON.stringify(book)
-        }).then((res) =>{   
+        }).then((res) =>{   //Cath는 여기서 오류가 나야 실행됨   
                 //console.log(res)
                 if(res.status === 201){
                     return res.json()
