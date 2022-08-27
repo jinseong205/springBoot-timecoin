@@ -9,3 +9,4 @@ timecoin/.settings/org.eclipse.jdt.apt.core.prefs
 timecoin/.classpath
 timecoin/target/classes/META-INF/maven/com.jinseong/timecoin/pom.properties
 *.properties
+timecoin/target/classes/META-INF/maven/com.jinseong/timecoin/pom.properties

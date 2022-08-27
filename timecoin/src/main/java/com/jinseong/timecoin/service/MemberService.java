@@ -1,6 +1,8 @@
 package com.jinseong.timecoin.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,7 @@ public class MemberService {
 	public Member save(Member member) {
 
 		String rawPassword = member.getPassword();
+		//password 암호화
 		//String encPassword = encoder.encode(rawPassword);
 		//member.setPassword(encPassword);
 		member.setRole(RoleType.USER);
